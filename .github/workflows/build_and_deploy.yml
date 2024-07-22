@@ -57,9 +57,9 @@ jobs:
 
       - name: add kubernetes cofig
         run: |
-	  aws eks update-kubeconfig --name ${{ vars.CLUSTER_NAME }} 
+         aws eks update-kubeconfig --name ${{ vars.CLUSTER_NAME }} 
 
       - name: Update Kubernetes deployment
         run: |
           kubectl apply -f k8s-manifests/deployment.yaml
-		  kubectl apply -f k8s-manifests/service.yaml
+          kubectl apply -f k8s-manifests/service.yaml
