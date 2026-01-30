@@ -1,0 +1,29 @@
+name: test
+
+on:
+  workflow_dispatch: 
+
+env:
+  AWS_REGION: ap-south-1
+  ECR_REPO: admin-panel
+  NAMESPACE: pepagora-staging
+  AWS_ACCOUNT_ID: 123467
+
+jobs:
+  deploy:
+    name: Build & test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: add env
+        run: | 
+         TAG=$(date +%Y%m%d%H%M%S)
+         echo "TAG=$TAG" >> $GITHUB_ENV
+         IMAGE=${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPO }}:${{ env.TAG }}
+         echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+      - name: print loaded env
+        run: | 
+         echo "image tag: $TAG"
+         echo "image name: $IMAGE"
+      
