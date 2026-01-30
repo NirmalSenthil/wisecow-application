@@ -19,7 +19,7 @@ jobs:
         run: | 
          TAG=$(date +%Y%m%d%H%M%S)
          echo "TAG=$TAG" >> $GITHUB_ENV
-         IMAGE=${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPO }}:${{ env.TAG }}
+         IMAGE=${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPO }}:$TAG
          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
 
       - name: print loaded env
@@ -28,5 +28,5 @@ jobs:
          echo "test Image ${{ env.IMAGE }}
          echo "image tag: $TAG"
          echo "image name: $IMAGE"
-         echo "final image name:  ${{ env.IMAGE }}:${{ env.TAG }} "
+         echo "final image name:  ${{ env.IMAGE }} "
       
