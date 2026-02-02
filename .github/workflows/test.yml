@@ -30,4 +30,5 @@ jobs:
          echo "image name: $IMAGE"
          echo "final image name:  ${{ env.IMAGE }} "
          echo "namespace:  $NAMESPACE"
+         echo "ECR repo : ${{ ECR_REPO }}"
       
