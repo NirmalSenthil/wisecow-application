@@ -29,4 +29,5 @@ jobs:
          echo "image tag: $TAG"
          echo "image name: $IMAGE"
          echo "final image name:  ${{ env.IMAGE }} "
+         echo "namespace:  $NAMESPACE"
       
