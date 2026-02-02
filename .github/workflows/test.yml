@@ -24,11 +24,11 @@ jobs:
 
       - name: print loaded env
         run: | 
-         echo "test tag ${{ env.TAG }}
-         echo "test Image ${{ env.IMAGE }}
+         echo "test tag ${{ env.TAG }}"
+         echo "test Image ${{ env.IMAGE }}"
          echo "image tag: $TAG"
          echo "image name: $IMAGE"
          echo "final image name:  ${{ env.IMAGE }} "
          echo "namespace:  $NAMESPACE"
-         echo "ECR repo : ${{ ECR_REPO }}"
+         echo "ECR repo : ${{ ECR_REPO }} "
       
